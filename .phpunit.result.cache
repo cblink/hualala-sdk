@@ -1,0 +1,1 @@
+{"version":1,"defects":{"TestShop::testShopList":4,"TestShop::testShopGoodsList":4,"TestShop::testOrder":4},"times":{"TestShop::testShopList":0.105,"TestShop::testShopGoodsList":0.768,"TestShop::testOrder":0.362}}
