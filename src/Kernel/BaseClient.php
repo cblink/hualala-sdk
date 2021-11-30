@@ -130,9 +130,9 @@ class BaseClient
     {
         $value = base64_decode($param);
 
-        $result = openssl_decrypt($value, 'AES-128-CBC', $this->config['appSecret'], OPENSSL_RAW_DATA, $this->config['appSecret']);
+        $result = openssl_decrypt($value, 'AES-128-CBC', $this->config['appSecret'], OPENSSL_NO_PADDING, $this->config['appSecret']);
 
-        return json_decode($result, true);
+        return json_decode(trim($result, "\x00"), true);
     }
 
     /**
