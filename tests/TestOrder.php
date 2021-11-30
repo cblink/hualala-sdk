@@ -27,11 +27,8 @@ class TestShop extends TestCase
     public function testOrder()
     {
         $data = [
-
         ];
         $result = $this->hualala->order->submitOrderNew($data);
         $this->assertTrue(\Illuminate\Support\Arr::get($result, 'code') === '000');
     }
-
-
 }

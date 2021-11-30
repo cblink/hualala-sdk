@@ -52,4 +52,26 @@ class Client extends BaseClient
         return $this->sendRequest('post', 'order/query', $payload);
     }
 
+    /**
+     * 解密
+     *
+     * @param string $payload
+     * @return mixed
+     */
+    public function dataDecrypt(string $payload='')
+    {
+        return $this->decrypt($payload);
+    }
+
+    /**
+     * 加密
+     *
+     * @param array $payload
+     * @return mixed
+     */
+    public function dataEncrypt(array $payload=[])
+    {
+        return $this->encrypt($payload);
+    }
+
 }

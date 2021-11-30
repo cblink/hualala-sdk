@@ -10,6 +10,7 @@
 
 namespace Cblink\HualalaSdk\Kernel;
 
+use Cblink\Hualala\HualalaOptions;
 use Cblink\HualalaSdk\Kernel\Exception\HualalaException;
 use Cblink\HualalaSdk\Kernel\Traits\HasHttpRequest;
 use http\Env\Request;
@@ -116,6 +117,22 @@ class BaseClient
         $encrypted = openssl_encrypt($json, 'AES-128-CBC', $this->config['appSecret'], OPENSSL_RAW_DATA, $this->config['appSecret']);
 
         return base64_encode($encrypted);
+    }
+
+    /**
+     * 解密
+     *
+     * @param $param
+     *
+     * @return mixed
+     */
+    public function decrypt($param)
+    {
+        $value = base64_decode($param);
+
+        $result = openssl_decrypt($value, 'AES-128-CBC', $this->config['appSecret'], OPENSSL_NO_PADDING, $this->config['appSecret']);
+
+        return json_decode($result, true);
     }
 
     /**
