@@ -166,9 +166,12 @@ class BaseClient
     {
         $reset = [];
         foreach ($params as $key => $value) {
+            if($value === null){
+                continue;
+            }
             if (is_array($value)) {
                 if (is_array($value[0] ?? null)) {
-                    $reset = array_merge($reset, $value[0]);
+                    $reset = array_merge($reset, $this->resetArray($value[0]));
                 } else {
                     $reset = array_merge($reset, $this->resetArray($value));
                 }
