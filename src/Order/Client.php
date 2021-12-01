@@ -22,6 +22,7 @@ class Client extends BaseClient
      *
      * @param array $payload
      * @return array
+     * @throws \Cblink\HualalaSdk\Kernel\Exception\HualalaException
      */
     public function submitOrderNew(array $payload = [])
     {
@@ -34,6 +35,7 @@ class Client extends BaseClient
      * @see https://www-openapi.hualala.com/order/createOrder
      * @param array $payload
      * @return array
+     * @throws \Cblink\HualalaSdk\Kernel\Exception\HualalaException
      */
     public function createOrder(array $payload = [])
     {
@@ -46,10 +48,24 @@ class Client extends BaseClient
      * @see https://www-openapi.hualala.com/order/createOrder
      * @param array $payload
      * @return mixed
+     * @throws \Cblink\HualalaSdk\Kernel\Exception\HualalaException
      */
     public function queryOrder(array $payload = [])
     {
         return $this->sendRequest('post', 'order/query', $payload);
+    }
+
+    /**
+     * 客户端申请退款
+     *
+     * @see https://www-openapi.hualala.com/order/applyRefund
+     * @param array $payload
+     * @return mixed
+     * @throws \Cblink\HualalaSdk\Kernel\Exception\HualalaException
+     */
+    public function applyRefund(array $payload = [])
+    {
+        return $this->sendRequest('post', 'order/applyRefund', $payload);
     }
 
     /**
