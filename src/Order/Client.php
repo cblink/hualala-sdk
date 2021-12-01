@@ -69,6 +69,19 @@ class Client extends BaseClient
     }
 
     /**
+     * 取消退款
+     *
+     * @see https://www-openapi.hualala.com/order/cancelApplyRefund
+     * @param array $payload
+     * @return mixed
+     * @throws \Cblink\HualalaSdk\Kernel\Exception\HualalaException
+     */
+    public function cancelApplyRefund(array $payload = [])
+    {
+        return $this->sendRequest('post', 'order/cancelApplyRefund', $payload);
+    }
+
+    /**
      * 解密
      *
      * @param string $payload
