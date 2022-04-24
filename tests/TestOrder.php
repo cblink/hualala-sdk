@@ -4,7 +4,7 @@
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
-class TestShop extends TestCase
+class TestOrder extends TestCase
 {
     protected $hualala;
 
@@ -38,7 +38,7 @@ class TestShop extends TestCase
         $data = [
             'groupID' => $this->hualala->config['groupID'],
             'shopID' => $this->hualala->config['shopID'],
-            'reportDate' => 20211220, //\Carbon\Carbon::now()->toDateString(),
+            'reportDate' => \Carbon\Carbon::now()->toDateString(),
             'pageNo' => 1,
             'pageSize' => 10,
         ];

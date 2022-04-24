@@ -27,20 +27,20 @@ class TestShop extends TestCase
 
     public function testShopList()
     {
-        $result = $this->hualala->shop->getAllShop(['groupID' => 324716]);
+        $result = $this->hualala->shop->getAllShop(['groupID' => 1]);
         $this->assertTrue(\Illuminate\Support\Arr::get($result, 'code') === '000');
     }
 
     public function testShopGoodsList()
     {
-        $result = $this->hualala->shop->getOpenFood(['groupID' => 324716, 'shopID' => 76862362]);
+        $result = $this->hualala->shop->getOpenFood(['groupID' => 1, 'shopID' => 1]);
 
         $this->assertTrue(\Illuminate\Support\Arr::get($result, 'code') === '000');
     }
 
     public function testGroupGoods()
     {
-        $result = $this->hualala->shop->groupGoods(['groupID' => 324716, 'pageNo' => 1, 'pageSize' => 10]);
+        $result = $this->hualala->shop->groupGoods(['groupID' => 1, 'pageNo' => 1, 'pageSize' => 10]);
         $this->assertTrue(\Illuminate\Support\Arr::get($result, 'code') === '000');
     }
 
