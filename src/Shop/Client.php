@@ -37,4 +37,16 @@ class Client extends BaseClient
     {
         return $this->sendRequest('post', 'doc/getOpenFood', $payload);
     }
+
+    /**
+     * 集团菜品列表
+     *
+     * @param array $payload
+     * @return mixed
+     * @throws \Cblink\HualalaSdk\Kernel\Exception\HualalaException
+     */
+    public function groupGoods(array $payload = [])
+    {
+        return $this->sendRequest('post', 'doc/queryGroupFoodSubInfoList', $payload);
+    }
 }

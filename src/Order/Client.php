@@ -82,6 +82,19 @@ class Client extends BaseClient
     }
 
     /**
+     * 门店账单(订单)
+     *
+     * @see https://www-openapi.hualala.com/report/getShopBillDetail
+     * @param array $payload
+     * @return mixed
+     * @throws \Cblink\HualalaSdk\Kernel\Exception\HualalaException
+     */
+    public function getShopBillDetail(array $payload = [])
+    {
+        return $this->sendRequest('post', 'report/getShopBillDetail', $payload);
+    }
+
+    /**
      * 解密
      *
      * @param string $payload

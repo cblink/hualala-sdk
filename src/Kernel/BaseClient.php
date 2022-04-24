@@ -10,10 +10,8 @@
 
 namespace Cblink\HualalaSdk\Kernel;
 
-use Cblink\Hualala\HualalaOptions;
 use Cblink\HualalaSdk\Kernel\Exception\HualalaException;
 use Cblink\HualalaSdk\Kernel\Traits\HasHttpRequest;
-use http\Env\Request;
 use Illuminate\Support\Arr;
 use Ramsey\Uuid\Uuid;
 
